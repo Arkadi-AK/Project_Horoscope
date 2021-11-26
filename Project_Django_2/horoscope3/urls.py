@@ -12,3 +12,5 @@ urlpatterns = [
     path('', views.index, name='horoscope-main'),
 
 ]
+
+# fffffffffffffff
