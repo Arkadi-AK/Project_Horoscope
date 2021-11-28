@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Меню </title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    Меню
+{% endblock %}
+
+{% block content %}
+
+{% include 'includes/navbar.html' %}
+
 <ul>
     {% for zodiac in zodiacs %}
     <li><a href="{% url 'horoscope-name' sign_zodiac=zodiac %}">{{ zodiac| title }}</a></li>
     {% endfor %}
-
 </ul>
 
-</body>
-</html>
+{% include 'includes/navbar.html' %}
+
+{% endblock %}

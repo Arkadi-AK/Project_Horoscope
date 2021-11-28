@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Гороскоп для {{sign}} </title>
-</head>
-<body>
-<h1>Приложение гороскоп</h1>
-<h2> {{description_zodiac}} </h2>
-<h2> Список {{my_list}} </h2>
+{% extends 'base.html' %}
 
-{% if my_list|length > 2 %}
-<h2> Список из 2-х или более элементов </h2>
+{% block title %}
+Гороскоп для {{sign|upper}}
+{% endblock %}
+
+{% block content %}
+
+{% include 'includes/navbar.html' %}
+
+{% if description_zodiac is None %}
+<h2> Неправильный знак зодиака - {{ sign|upper }} </h2>
 {% else %}
-<h2> {{ my_list }} </h2>
+<h2> {{description_zodiac|capfirst|safe}} </h2>
 {% endif %}
 
-<h2> Словарь {{my_dict}} {{my_dict.name}} - {{my_dict.age}} лет </h2>
-<h2> Класс {{my_class}} </h2>
-</body>
-</html>
+{% include 'includes/navbar.html' %}
+
+{% endblock %}

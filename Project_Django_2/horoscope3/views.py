@@ -90,9 +90,6 @@ def get_info_about_sign_zodiac(request, sign_zodiac: str):
     description = zodiac_dict.get(sign_zodiac)
     data = {'description_zodiac': description,
             'sign': sign_zodiac.title(),
-            'my_list': [1, 2],
-            'my_dict': {'name': 'Jack', 'age': 20},
-            'my_class': Person('Will', 55),
             }
     return render(request, 'horoscope3/info_zodiac.html', context=data)
 
